@@ -1,4 +1,4 @@
-![Sendy](https://dscape-llc.com/downloads/laravel-sendy.png)
+![Laravel-Sendy](https://dscape-llc.com/assets/downloads/laravel-sendy.png)
 # Laravel Sendy
 A service provider for Sendy API in Laravel 7. Much thanks to Jozsef Hocza for the original Laravel 5 version.
 
