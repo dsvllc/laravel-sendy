@@ -200,36 +200,12 @@ class Sendy
     {
         $url = '/api/campaigns/create.php';
 
-        if (empty($options['from_name'])) {
-            throw new \Exception('From Name is not set', 1);
-        }
-
-        if (empty($options['from_email'])) {
-            throw new \Exception('From Email is not set', 1);
-        }
-
-        if (empty($options['reply_to'])) {
-            throw new \Exception('Reply To address is not set', 1);
-        }
-
-        if (empty($options['subject'])) {
-            throw new \Exception('Subject is not set', 1);
-        }
-
-        // 'plain_text' field can be included, but optional
-        if (empty($content['html_text'])) {
-            throw new \Exception('Campaign Content (HTML) is not set', 1);
-        }
+        $options = $this->checkOptions($options);
 
         if ($send) {
             if (empty($options['brand_id'])) {
                 throw new \Exception('Brand ID should be set for Draft campaigns', 1);
             }
-        }
-
-        // list IDs can be single or comma separated values
-        if (empty($options['list_ids'])) {
-            $options['list_ids'] = $this->listId;
         }
 
         // should we send the campaign (1) or save as Draft (0)
@@ -293,5 +269,41 @@ class Sendy
         if (!isset($this->apiKey)) {
             throw new \Exception('[apiKey] is not set', 1);
         }
+    }
+
+    /**
+     * @param $options
+     * @return mixed
+     * @throws \Exception
+     */
+    private function checkOptions($options)
+    {
+        if (empty($options['from_name'])) {
+            throw new \Exception('From Name is not set', 1);
+        }
+
+        if (empty($options['from_email'])) {
+            throw new \Exception('From Email is not set', 1);
+        }
+
+        if (empty($options['reply_to'])) {
+            throw new \Exception('Reply To address is not set', 1);
+        }
+
+        if (empty($options['subject'])) {
+            throw new \Exception('Subject is not set', 1);
+        }
+
+        // 'plain_text' field can be included, but optional
+        if (empty($content['html_text'])) {
+            throw new \Exception('Campaign Content (HTML) is not set', 1);
+        }
+
+        // list IDs can be single or comma separated values
+        if (empty($options['list_ids'])) {
+            $options['list_ids'] = $this->listId;
+        }
+
+        return $options;
     }
 }

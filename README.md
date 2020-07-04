@@ -14,7 +14,7 @@ or append your composer.json with:
 ```json
 {
     "require" : {
-        "dsvllc\laravel-sendy": "^1.*"
+        "dsvllc/laravel-sendy": "^1.*"
     }
 }
 ```
