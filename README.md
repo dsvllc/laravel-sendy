@@ -2,7 +2,7 @@
 # Laravel Sendy
 A service provider for Sendy API in Laravel 7. Much thanks to Jozsef Hocza for the original Laravel 5 version.
 
-<a href="https://codeclimate.com/github/dsvllc/laravel-sendy/maintainability"><img src="https://api.codeclimate.com/v1/badges/d8a44f124642c289c7ac/maintainability" /></a>
+<a href="https://codeclimate.com/github/dsvllc/laravel-sendy/maintainability"><img src="https://api.codeclimate.com/v1/badges/d8a44f124642c289c7ac/maintainability" /></a> [![Latest Stable Version](https://poser.pugx.org/dsvllc/laravel-sendy/v)](//packagist.org/packages/dsvllc/laravel-sendy) [![Total Downloads](https://poser.pugx.org/dsvllc/laravel-sendy/downloads)](//packagist.org/packages/dsvllc/laravel-sendy) [![Latest Unstable Version](https://poser.pugx.org/dsvllc/laravel-sendy/v/unstable)](//packagist.org/packages/dsvllc/laravel-sendy) [![License](https://poser.pugx.org/dsvllc/laravel-sendy/license)](//packagist.org/packages/dsvllc/laravel-sendy)
 
 ## Installation
 ```shell
