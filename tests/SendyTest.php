@@ -1,15 +1,15 @@
-<?php namespace Hocza\Tests\Sendy;
+<?php namespace Dsvllc\Tests\Sendy;
 
-use Hocza\Sendy\Sendy;
+use Dsvllc\Sendy\Sendy;
 use PHPUnit_Framework_TestCase;
 
 class SendyTest extends PHPUnit_Framework_TestCase
 {
     private $config = [
-        'listId' => 'YOUR_LIST_ID',
-        'installationUrl' => 'YOUR_URL',
-        'apiKey' => 'API_KEY_HERE',
-    ];
+        'api_key' => 'API_KEY_HERE',
+        'list_id' => 'YOUR_LIST_ID',
+        'installation_url' => 'YOUR_URL',
+     ];
 
     public function testSimpleSubscribe()
     {

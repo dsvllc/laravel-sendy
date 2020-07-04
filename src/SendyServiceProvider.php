@@ -1,13 +1,13 @@
 <?php
 
-namespace Hocza\Sendy;
+namespace Dsvllc\Sendy;
 
 use Illuminate\Support\ServiceProvider;
 
 /**
  * Class SendyServiceProvider
  *
- * @package Hocza\Sendy
+ * @package Dsvllc\Sendy
  */
 class SendyServiceProvider extends ServiceProvider
 {
@@ -27,7 +27,7 @@ class SendyServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/sendy.php' => config_path('sendy.php')
+            __DIR__ . '/../config/laravel-sendy.php' => config_path('laravel-sendy.php')
         ]);
     }
 
@@ -38,9 +38,7 @@ class SendyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Hocza\Sendy\Sendy', function ($app) {
-            return new Sendy($app['config']['sendy']);
-        });
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-sendy.php', 'laravel-sendy');
     }
 
     /**

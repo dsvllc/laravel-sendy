@@ -1,16 +1,14 @@
 <?php
 
-namespace Hocza\Sendy;
+namespace Dsvllc\Sendy;
 
 /**
  * Class Sendy
  *
- * @package Hocza\Sendy
+ * @package Dsvllc\Sendy
  */
 class Sendy
 {
-    protected $config;
-
     protected $installationUrl;
     protected $apiKey;
     protected $listId;
@@ -22,11 +20,11 @@ class Sendy
      *
      * @throws \Exception
      */
-    public function __construct(array $config)
+    public function __construct()
     {
-        $this->setListId($config['listId']);
-        $this->setInstallationUrl($config['installationUrl']);
-        $this->setApiKey($config['apiKey']);
+        $this->setApiKey(config('laravel-sendy.api_key'));
+        $this->setListId(config('laravel-sendy.list_id'));
+        $this->setInstallationUrl(config('laravel-sendy.installation_url'));
 
         $this->checkProperties();
     }

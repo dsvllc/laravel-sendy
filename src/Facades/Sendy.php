@@ -1,13 +1,13 @@
 <?php
 
-namespace Hocza\Sendy\Facades;
+namespace Dsvllc\Sendy\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Sendy
  *
- * @package Hocza\Sendy\Facades
+ * @package Dsvllc\Sendy\Facades
  */
 class Sendy extends Facade
 {
@@ -18,6 +18,6 @@ class Sendy extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'Hocza\Sendy\Sendy';
+        return 'Dsvllc\Sendy\Sendy';
     }
 }

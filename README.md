@@ -1,12 +1,12 @@
-![Sendy](http://demo.hocza.com/github/sendy-laravel/sendy-laravel.png)
-# Sendy Laravel
-A service provider for Sendy API in Laravel 5
+![Sendy](https://dscape-llc.com/downloads/laravel-sendy.png)
+# Laravel Sendy
+A service provider for Sendy API in Laravel 7. Much thanks to Jozsef Hocza for the original Laravel 5 version.
 
 <a href="https://codeclimate.com/github/hocza/sendy-laravel"><img src="https://codeclimate.com/github/hocza/sendy-laravel/badges/gpa.svg" /></a> [![Latest Stable Version](https://poser.pugx.org/hocza/sendy/v/stable)](https://packagist.org/packages/hocza/sendy) [![Total Downloads](https://poser.pugx.org/hocza/sendy/downloads)](https://packagist.org/packages/hocza/sendy) [![Latest Unstable Version](https://poser.pugx.org/hocza/sendy/v/unstable)](https://packagist.org/packages/hocza/sendy) [![License](https://poser.pugx.org/hocza/sendy/license)](https://packagist.org/packages/hocza/sendy)
 
 ## Installation
 ```shell
-composer require hocza/sendy:1.*
+composer require dsvllc/laravel-sendy
 ```
 
 or append your composer.json with:
@@ -14,46 +14,34 @@ or append your composer.json with:
 ```json
 {
     "require" : {
-        "hocza/sendy": "1.*"
+        "dsvllc\laravel-sendy": "^1.*"
     }
 }
 ```
-Add the following settings to the config/app.php
-
-Service provider:
-
-```php
-'providers' => [
-    // ...
-    'Hocza\Sendy\SendyServiceProvider',
-]
-```
-
-For the `Sendy::` facade
+Add the following settings to the config/app.php for the `Sendy::` facade
 
 ```php
 'aliases' => [
     // ...
-    'Sendy' => 'Hocza\Sendy\Facades\Sendy',
+    'Sendy' => 'Dsvllc\Sendy\Facades\Sendy',
 ]
 ```
 
 ## Configuration
 ```shell
-php artisan vendor:publish --provider="Hocza\Sendy\SendyServiceProvider"
+php artisan vendor:publish --provider="Dsvllc\Sendy\SendyServiceProvider"
 ```
 
-It will create sendy.php within the config directory.
+It will create laravel-sendy.php within the config directory.
 
 ```php
 <?php
 
 return [
 
-    'listId' => '',
-    'installationUrl' => '',
-    'apiKey' => '',
-
+    'api_key' => env('SENDY_API_KEY', ''),
+    'list_id' => env('SENDY_LIST_ID', ''),
+    'installation_url' => env('SENDY_INSTALLATION_URL', ''),
 ];
 ```
 
@@ -216,8 +204,5 @@ Sendy::setListId($list_id)->count();
 
 ## Todo
 
-* Implementing the rest of the API. :)
-* better documentation - in progress as you can see :)
-
-## Buy me a coffee :)
-<a href='https://pledgie.com/campaigns/31653'><img alt='Click here to lend your support to: Sendy-laravel and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31653.png?skin_name=chrome' border='0' ></a>
+* Implementing the rest of the API
+* More thorough documentation
